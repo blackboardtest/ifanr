@@ -2,7 +2,7 @@ hubble.getXML('http://www.ifanr.com/feed', function (error, response, $) {
 	$('item').each(function (index, value) {
 
 		var url = $(this).find('link').text();
-		var key = url.substring(url.lastIndexOf('/') + 1);
+		var key = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('?'));
 		var dom = $(this);
 
 		articles.get('key', key, function (article) {
